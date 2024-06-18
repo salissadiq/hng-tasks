@@ -7,17 +7,16 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
-RUN yarn install --ignore-engines
+RUN npm install --ignore-engines
 
 COPY . ./
 
 ARG PORT
 ENV PORT=${PORT}
-ARG DB
-ENV DB=${DB}
+
 
 # Expose port 3000 for the app
 EXPOSE ${PORT}
 
 # Start the app
-CMD ["yarn", "start"]
+CMD ["npm run", "start"]
