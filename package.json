@@ -9,7 +9,6 @@
   "author": "Salissadiq",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "ip": "^2.0.1"
+    "express": "^4.19.2"
   }
 }
