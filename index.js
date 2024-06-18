@@ -1,17 +1,14 @@
-const express = require('express');
+const express = require("express");
+const ip = require("ip");
 const app = express();
-const port = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5050;
 
-app.get('/', (req, res) => {
-  const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  const greeting = `Hello, your IP is ${clientIp}`;
+app.get("/", (request, response) => {
+    const clientIP = ip.address("" || "public" || "private");
+    response.jsonp({
+        ip: clientIP,
+        greeting: `Hello Salscodes your IP adress is ${clientIP}`,
+    })
+})          
 
-  res.json({
-    ip: clientIp,
-    greeting: greeting
-  });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+app.listen(PORT, () => console.log(`Server running on PORT: ${PORT}`));
