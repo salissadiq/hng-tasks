@@ -9,6 +9,7 @@
   "author": "Salissadiq",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "geoip-lite": "^1.4.10"
   }
 }

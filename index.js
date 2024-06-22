@@ -1,3 +1,4 @@
+const { lookup } = require('geoip-lite');
 const express = require("express");
 const app = express();
 
@@ -9,14 +10,14 @@ app.get("/", (request, response) => {
 
 app.get("/api/hello", async(request, response) => {
     const client_id =
-        request.headers["x-real-ip"] || 
         request.headers["x-forwarded-for"] ||
-        request.socket.localAddress;
-    
+        request.connection.remoteAddress;
+      console.log(client_id);
+    const location = lookup(client_id);
     const visitor_name = request.query?.visitor_name || "Mark"
-        console.log(response.location());
     response.jsonp({
         client_id,
+        location,
         greeting: `Hello, ${visitor_name}`, 
     })
 
