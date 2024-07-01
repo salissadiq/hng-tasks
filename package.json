@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "geoip-lite": "^1.4.10"
+    "geoip-lite2": "^2.1.37"
   }
 }

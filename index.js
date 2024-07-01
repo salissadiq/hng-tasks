@@ -1,4 +1,4 @@
-const { lookup } = require('geoip-lite');
+const geoIp2 = require('geoip-lite2');  
 const express = require("express");
 const app = express();  
 
@@ -13,7 +13,7 @@ app.get("/api/hello", async(request, response) => {
     const client_ip =
         request.headers["x-forwarded-for"] ||
         request.connection.remoteAddress;
-    const location = lookup(client_ip)?.city;
+    const location = geoIp2.lookup(client_ip)?.city;
     const weather = await getWeatherInfo(location);
     const visitor_name = request?.query?.visitor_name || "Mark"
 
