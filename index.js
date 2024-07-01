@@ -17,12 +17,11 @@ app.get("/api/hello", async(request, response) => {
     getWeatherInfo(location)
         .then(data => console.log(data))
         .catch(error => console.log(error))
-    console.log(weather);
     const visitor_name = request?.query?.visitor_name || "Mark"
     response.jsonp({
         client_id,
         location,
-        greeting: `Hello, ${visitor_name}!, the temperature is ${weather?.main?.temp} degrees Celcius in ${location}`, 
+        greeting: `Hello, ${visitor_name}!, the temperature is      degrees Celcius in ${location}`, 
     })
 })
 
