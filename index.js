@@ -10,11 +10,12 @@ app.get("/", async(request, response) => {
 })
 
 app.get("/api/hello", async(request, response) => {
-    const client_id =
+    const client_ip =
         request.headers["x-forwarded-for"] ||
         request.connection.remoteAddress;
-    const location = lookup(client_id)?.city;
-    const weather = await getWeatherInfo(location);
+    const location = lookup(client_ip)?.city;
+    console.log(client_ip);
+    const weather = await getWeatherInfo("Katsina");
     const visitor_name = request?.query?.visitor_name || "Mark"
 
     response.jsonp({
