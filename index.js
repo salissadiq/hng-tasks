@@ -15,7 +15,8 @@ app.get("/api/hello", async(request, response) => {
         request.connection.remoteAddress;
     const location = lookup(client_id)?.city;
     const weather = await getWeatherInfo(location);
-        const visitor_name = request?.query?.visitor_name || "Mark"
+    console.log(weather);
+    const visitor_name = request?.query?.visitor_name || "Mark"
     response.jsonp({
         client_id,
         location,
