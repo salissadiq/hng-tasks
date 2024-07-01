@@ -1,7 +1,8 @@
+require('dotenv').config()
+const { lookup } = require("geoip-lite");
 const geoIp2 = require('geoip-lite2');  
 const express = require("express");
 const app = express();  
-
 
 const PORT = process.env.PORT || 5050;
 
@@ -12,8 +13,9 @@ app.get("/", async(request, response) => {
 app.get("/api/hello", async(request, response) => {
     const client_ip =
         request.headers["x-forwarded-for"] ||
-        request.connection.remoteAddress;
-    const location = geoIp2.lookup(client_ip)?.city;
+        request.socket.remoteAddress;
+    const location = geoIp2.lookup(client_ip)?.city ? geoIp2.lookup(client_ip)?.city : lookup(client_ip)?.city;
+
     const weather = await getWeatherInfo(location);
     const visitor_name = request?.query?.visitor_name || "Mark"
 
@@ -25,7 +27,7 @@ app.get("/api/hello", async(request, response) => {
 })
 
 async function getWeatherInfo(location) {
-    const apiKey = "10bb9032f3770e94fcc78b7779c1dd9d"
+    const apiKey = process.env.API_KEYS
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${apiKey}`;
     try {
         const response = await fetch(url);
