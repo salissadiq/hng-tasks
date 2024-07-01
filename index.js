@@ -13,7 +13,7 @@ app.get("/api/hello", async(request, response) => {
     const client_id =
         request.headers["x-forwarded-for"] ||
         request.connection.remoteAddress;
-    const location = lookup(client_id)?.city;
+    const location = await lookup(client_id)?.city;
     const weather = await getWeatherInfo(location);
     console.log(weather);
     const visitor_name = request?.query?.visitor_name || "Mark"
