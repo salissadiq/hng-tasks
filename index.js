@@ -12,6 +12,7 @@ app.get("/api/hello", async(request, response) => {
     const client_id =
         request.headers["x-forwarded-for"] ||
         request.connection.remoteAddress;
+    console.log(lookup(client_id));
     const location = lookup(client_id)?.city;
     const visitor_name = request?.query?.visitor_name || "Mark"
     response.jsonp({
