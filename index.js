@@ -14,8 +14,7 @@ app.get("/api/hello", async(request, response) => {
         request.headers["x-forwarded-for"] ||
         request.connection.remoteAddress;
     const location = lookup(client_ip)?.city;
-    console.log(lookup(client_ip));
-    const weather = await getWeatherInfo("Katsina");
+    const weather = await getWeatherInfo(location);
     const visitor_name = request?.query?.visitor_name || "Mark"
 
     response.jsonp({
