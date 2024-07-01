@@ -13,27 +13,25 @@ app.get("/api/hello", async(request, response) => {
     const client_id =
         request.headers["x-forwarded-for"] ||
         request.connection.remoteAddress;
-    const location = await lookup(client_id)?.city;
-    getWeatherInfo("Abuja")
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+    const location = lookup(client_id)?.city;
+    const weather = await getWeatherInfo("Lagos");
     const visitor_name = request?.query?.visitor_name || "Mark"
+
     response.jsonp({
         client_id,
         location,
-        greeting: `Hello, ${visitor_name}!, the temperature is      degrees Celcius in ${location}`, 
+        greeting: `Hello, ${visitor_name}!, the temperature is ${weather?.main?.temp} degrees Celcius in ${location}`, 
     })
 })
 
 async function getWeatherInfo(location) {
     const apiKey = "10bb9032f3770e94fcc78b7779c1dd9d"
-    const url = `https://api.openweathermap.org/data/3.0/weather?q=${location}&units=metric&APPID=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${apiKey}`;
     try {
         const response = await fetch(url);
         return await    response.json()
     } catch (error) {
         console.log(error)
-        throw error 
     }
 
 }   
