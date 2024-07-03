@@ -240,6 +240,11 @@ display: none;
   .profile-picture{
 display: none;
 }
+.about-section > p {
+  font-size: 12px;
+  width: 100%;
+  line-height: 20px;
+}
 .basic-info{
   background-image: url("salscodes\ 710\ x\ 955.svg");
   height: 100vh;
