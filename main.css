@@ -102,16 +102,16 @@ aside{
   letter-spacing: 1px;
 }
 .about-section{
-  height: 100vh;
-  min-height: 100vh;  
+  height: 85vh;
+  min-height: 85vh;  
 }
 a > .about-section {
   color: green;
   text-decoration: dashed;
 }
 .portfolio-section{
-  height: 50vh;
-  min-height: 50vh;  
+  height: 40vh;
+  min-height: 40vh;  
 }
 
 .skill-container {
@@ -261,12 +261,12 @@ display: none;
 }
 
 .portfolio-section{
-   margin-bottom: 400px;
+   margin-bottom: 450px;
 }
 .about-section{
   height: 100vh;
   min-height: 100vh;  
- margin-bottom: 550px;
+ margin-bottom: 250px;
 }
 .goals-section{
   height: 100vh;
