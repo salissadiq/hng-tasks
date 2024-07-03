@@ -195,7 +195,6 @@ display: none;
   background-image: url("salscodes\ 710\ x\ 955.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* filter: brightness(80%); */
   height: 100vh;
   width: 100dvw;
   display:flex;
@@ -226,8 +225,7 @@ display: none;
     color: black;
     font-weight: 600;
     font-size: 60px;
-    /* background-color: #616161; */
-    /* filter: brightness(10%); */
+
   }
   .time-date{
   color: black;
@@ -244,7 +242,6 @@ display: none;
 }
 .basic-info{
   background-image: url("salscodes\ 710\ x\ 955.svg");
-  /* filter: brightness(80%); */
   height: 100vh;
   display:flex;
   flex-direction: column;

@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="timeline.css">
-<link rel="stylesheet" href="main.css">
-</head>
-<body>
-<div class="main-wrapper">
-  <aside>
-    <img src="salscodes 710 x 955.svg" data-testid="slackProfilePicture" class="profile-picture" alt="Salis Sadiq" />
-  </aside>
-    <div class="main-content">
-      <div class="navbar">
-        <ul>
-          <li class="nav-item"><a href="#about-me">About me</a> </li>
-          <li class="nav-item"><a href="#portfolio">Portfolio</a> </li>
-          <li class="nav-item"><a href="#goals">Goals</a> </li>
-        </ul>
-      </div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="timeline.css" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <aside>
+        <img
+          src="salscodes 710 x 955.svg"
+          data-testid="slackProfilePicture"
+          class="profile-picture"
+          alt="Salis Sadiq"
+        />
+      </aside>
+      <div class="main-content">
+        <div class="navbar">
+          <ul>
+            <li class="nav-item"><a href="#about-me">About me</a></li>
+            <li class="nav-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#goals">Goals</a></li>
+          </ul>
+        </div>
+        <div class="details-content">
+          <div class="basic-info">
+            <h1 data-testid="slackDisplayName" class="name">Salis Sadiq</h1>
+            <h2 class="title">Fullstack Engineer</h2>
+            <span data-testid="slackEmail" class="email"
+              >salissadiq@gmail.com</span
+            >
+            <span
+              data-testid="currentTimeUTC"
+              class="time-date"
+              id="time"
+            ></span>
+            <span data-testid="currentDay" class="time-date" id="day"></span>
+          </div>
+          <div class="about-section" id="about-me">
+            <h2 class="details-heading">About me</h2>
+            <hr />
+            <p class="about-me-details">
+              Highly skilled and passionate computer scientist with expertise in
+              web development. Proficient in ReactJS, VueJS, MongoDB, Node.js,
+              and Express.js, adept at creating efficient and user-friendly web
+              applications. Strong problem-solving abilities, coupled with a
+              deep understanding of software development principles. Committed
+              to continuous learning and staying up-to-date with the latest
+              technologies to deliver cutting-edge solutions. Eager to
+              contribute my skills and knowledge to drive innovation and success
+              in challenging projects.
+            </p>
 
-     
+            <p>
+              Right now I'm doing HNG internship to enhance my skill set and be
+              industry level developer to help me excel in my tech career and be
+              able to secure a foreign remote job. Learn more about
+              <a
+                href="https://www.hng.tech/learn"
+                data-testid="hngLink"
+                style="color: blue"
+                >HNG internship</a
+              >
+              . And also do check out cool stuff that you can use for web
+              scrapping
+              <a
+                href="https://www.scrapeanyweb.site"
+                data-testid="scrapeanywebLink"
+                style="color: blue"
+                >scrapeanyweb Link</a
+              >
+              or
+              <a
+                href="https://keyword.dog"
+                data-testid="keywordLink"
+                style="color: blue"
+              >
+                keyword Link</a
+              >
+            </p>
 
-     <div class="details-content" >
-       <div class="basic-info">
-        <h1 data-testid="slackDisplayName" class="name">Salis Sadiq</h1>
-        <h2 class="title">Fullstack Engineer</h2>
-        <span data-testid="slackEmail" class="email">salissadiq@gmail.com</span>
-        <span data-testid="currentTimeUTC"   class="time-date" id="time"></span>
-          <span data-testid="currentDay"   class="time-date" id="day"></span>
-      </div>
-        <div class="about-section" id="about-me">
-          <h2 class="details-heading">About me</h2>
-          <hr/>
-          <p class="about-me-details">
-            Highly skilled and passionate computer scientist with expertise in web development. Proficient in ReactJS, VueJS, MongoDB, Node.js, and Express.js, adept at creating efficient and user-friendly web applications. Strong problem-solving abilities, coupled with a deep understanding of software development principles. Committed to continuous learning and staying up-to-date with the latest technologies to deliver cutting-edge solutions. Eager to contribute my skills and knowledge to drive innovation and success in challenging projects. 
-          </p>
-
-          <p>
-            Right now I'm doing HNG internship to enhance my skill set and be industry level developer to help me excel in my  tech career and be able to secure a foreign remote job. Learn more about <a href="https://www.hng.tech/learn" data-testid="hngLink" style="color: blue;">HNG internship</a> . And also do check out cool stuff that you can use for web scrapping <a href="https://www.scrapeanyweb.site" data-testid="scrapeanywebLink" style="color: blue;">scrapeanyweb Link</a> or <a href="https://keyword.dog" data-testid="keywordLink" style="color: blue;"> keyword Link</a>
-          </p>
-
-          <div>
-            <h2 class="details-heading">My Skills</h2>
+            <div>
+              <h2 class="details-heading">My Skills</h2>
 
               <p>HTML</p>
               <div class="skill-container">
@@ -66,307 +112,223 @@
               <div class="skill-container">
                 <div class="skills php">40%</div>
               </div>
-          </div>
-        </div>
-
-        <div class="portfolio-section" id="portfolio">
-          <h2 class="details-heading">My porfolio</h2>
-          <hr/>
-          <div class="portfolio-grid">
-            <div class="flip-container">
-              <div class="flip-container-inner">
-                <div class="flip-container-front">
-                  <img src="naijlist 250 x 150.svg" alt="Paris" style="width:250px;height:150px">
-                </div>
-                <div class="flip-container-back">
-                  <h2>Naijlist</h2>
-                  <p>A Classified Advertising Website</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flip-container-inner">
-                <div class="flip-container-front">
-                  <img src="women-hub 250 x 150.svg" alt="Paris" style="width:250px;height:150px">
-                </div>
-                <div class="flip-container-back">
-                  <h2>Womenhub</h2>
-                  <p>Website for women related organizations</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="flip-container">
-              <div class="flip-container-inner">
-                <div class="flip-container-front">
-                  <img src="women-hub-admin  250 x 150.svg" alt="Paris" style="width:250px;height:150px">
-                </div>
-                <div class="flip-container-back">
-                  <h2>Womenhub Admin</h2>
-                  <p>Admin dashboard for managing the main website of womenhub</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="height: 100vh;">
-          <div class="goals-section"  id="goals">
-          <h2 class="details-heading">My Goals</h2>
-          <hr/>
-          <!-- <h3  class="goal-header">2024 Goals <span style="font-weight: 400; font-size: 16px;">(Building Foundations and Industry Readiness)</span> </h3>
-          <div class="timeline">
-            <div class="container right">
-              <div class="content">
-                <h4>Enhance Technical Skills</h4>
-              <ul>
-                <li>
-                  Master Java and JavaScript: Complete advanced courses and build complex projects to solidify my proficiency.
-                </li>
-                <li>
-                  Learn Additional Backend Tools: Gain expertise in frameworks such as Django, Flask, and Node.js, and databases like PostgreSQL and MongoDB.
-
-                </li>
-                <li>
-                  Learn Additional Frontend Tools: Improve skills in frontend frameworks such as React, Angular, and Vue.js, and tools like Webpack and Babel.
-                </li>
-              </ul>
-              </div>
-            </div>
-            <div class="container right">
-              <div class="content">
-                <h4>Develop a Strong Portfolio</h4>
-              <ul>
-                <li>
-                 Open Source Contributions: Start contributing to open source projects to improve my coding skills and network with other developers.
-                </li>
-                <li>
-                  Personal Projects: Develop and deploy a web application and a mobile app to showcase my abilities.
-
-                </li>
-                <li>
-                 Technical Blog: Launch a blog to document my learning journey and share tutorials on Python, JavaScript, and various frameworks.
-                </li>
-              </ul>
-              </div>
-            </div>
-            <div class="container right">
-              <div class="content">
-                <h4>Expand Professional Network</h4>
-              <ul>
-                <li>
-                 Attend Local Tech Meetups: Participate in at least two local tech meetups to network with professionals and learn from peers.
-                </li>
-                <li>
-                 Join Online Tech Communities: Become active in online forums and communities like Stack Overflow, Reddit, and GitHub.
-
-                </li>
-                <li>
-                LinkedIn and GitHub Profiles: Regularly update my profiles to reflect my latest projects and achievements.
-                </li>
-              </ul>
-              </div>
-            </div>
-
-            <div class="container right">
-              <div class="content">
-                <h4>Career Advancement</h4>
-                <ul>
-                  <li>
-                  HNG Internship: Attend and complete the HNG internship to gain practical experience and industry readiness.
-                  </li>
-                  <li>
-                  Mentorship Program: Find a mentor within the industry to guide my career development and provide valuable insights.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="container right">
-              <div class="content">
-                <h4>Community Involvement</h4>
-                <ul>
-                  <li>
-                  Tech Workshops for Beginners: Organize or volunteer at workshops to teach coding to beginners and underrepresented groups.
-                  </li>
-                  <li>
-                  Local Hackathons: Participate in hackathons to solve real-world problems and collaborate with diverse teams.
-                  </li>
-                  <li>
-                    Social Impact Initiatives: Begin developing a tech solution aimed at addressing a social issue, such as education or healthcare.
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
-           <h3 class="goal-header" style="margin-top: 100px;">2025 Goals <span style="font-weight: 400; font-size: 16px;">(Advancing and Specializing)</span> </h3>
-          <div class="timeline">
-            <div class="container right">
-              <div class="content">
-                
+          <div class="portfolio-section" id="portfolio">
+            <h2 class="details-heading">My porfolio</h2>
+            <hr />
+            <div class="portfolio-grid">
+              <div class="flip-container">
+                <div class="flip-container-inner">
+                  <div class="flip-container-front">
+                    <img
+                      src="naijlist 250 x 150.svg"
+                      alt="Paris"
+                      style="width: 250px; height: 150px"
+                    />
+                  </div>
+                  <div class="flip-container-back">
+                    <h2>Naijlist</h2>
+                    <p>A Classified Advertising Website</p>
+                  </div>
+                </div>
+              </div>
 
+              <div class="flip-container">
+                <div class="flip-container-inner">
+                  <div class="flip-container-front">
+                    <img
+                      src="women-hub 250 x 150.svg"
+                      alt="Paris"
+                      style="width: 250px; height: 150px"
+                    />
+                  </div>
+                  <div class="flip-container-back">
+                    <h2>Womenhub</h2>
+                    <p>Website for women related organizations</p>
+                  </div>
+                </div>
+              </div>
 
-                <h4>Career Advancement</h4>
-              <ul>
-                <li>
-                  Secure a Foreign Tech Job: Apply and secure a tech position in a reputable foreign company to gain international experience.    .
-                </li>
-                <li>
-                Leadership and Mentorship: Take on leadership roles and mentor junior developers within my organization or community.
-
-                </li>
-                <li>
-                  Continuous Learning: Commit to lifelong learning by regularly taking courses, attending workshops, and staying abreast of new technologies.
-                </li>
-              </ul>
+              <div class="flip-container">
+                <div class="flip-container-inner">
+                  <div class="flip-container-front">
+                    <img
+                      src="women-hub-admin  250 x 150.svg"
+                      alt="Paris"
+                      style="width: 250px; height: 150px"
+                    />
+                  </div>
+                  <div class="flip-container-back">
+                    <h2>Womenhub Admin</h2>
+                    <p>
+                      Admin dashboard for managing the main website of womenhub
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="container right">
-              <div class="content">
-                <h4>Community Involvement</h4>
-                <ul>
-                  <li>
-                  Technical Blog Expansion: Write in-depth articles and tutorials on backend and frontend development, as well as cloud computing.
-                  </li>
-                  <li>
-                  Code youtube channel: Start a youtube channel to share my experience and teach programming to newbies.
-                  </li>
-                </ul>
+          </div>
+          <div style="height: 100vh">
+            <div class="goals-section" id="goals">
+              <h2 class="details-heading">My Goals</h2>
+              <hr />
+              <div class="timeline">
+                <div class="container left">
+                  <div class="content">
+                    <h2>Q1 (March-May 2024)</h2>
+                    <ul>
+                      <li>
+                        Enhance Skills: Identify gaps, start an online course.
+                      </li>
+                      <li>Portfolio: Begin a significant project.</li>
+                      <li>Networking: Attend a local tech meetup.</li>
+                      <li>Community: Choose an open-source project.</li>
+                      <li>
+                        HNG Internship: Start the HNG internship to enhance
+                        skills, become industry-standard, expand network, gain
+                        foreign opportunities, and receive mentorship.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container right">
+                  <div class="content">
+                    <h2>Q2 (June-August 2024)</h2>
+                    <ul>
+                      <li>Networking: Join online groups.</li>
+                      <li>Community: Contribute to open source.</li>
+                      <li>
+                        HNG Internship: Continue participating actively and
+                        utilize mentorship.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container left">
+                  <div class="content">
+                    <h2>Q3 (September-November 2024)</h2>
+                    <ul>
+                      <li>Portfolio: Start a new project.</li>
+                      <li>Networking: Connect on LinkedIn.</li>
+                      <li>Community: Volunteer for a tech project.</li>
+                      <li>
+                        HNG Internship: Leverage networking and mentorship for
+                        project ideas.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container right">
+                  <div class="content">
+                    <h2>Q4 (December-February 2024)</h2>
+                    <ul>
+                      <li>Portfolio: Update portfolio.</li>
+                      <li>Community: Increase open-source contributions.</li>
+                      <li>
+                        HNG Internship: Reflect on learnings and apply them in
+                        new projects.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container left">
+                  <div class="content">
+                    <h2>Q1 (March-May 2025)</h2>
+                    <ul>
+                      <li>
+                        Career Advancement: Performance review, lead projects.
+                      </li>
+                      <li>
+                        Foreign Job: Research opportunities and start
+                        applications.
+                      </li>
+                      <li>
+                        Leadership: Mentor a junior developer, lead team
+                        projects.
+                      </li>
+                      <li>
+                        Learning: Stay updated with industry news, enroll in
+                        advanced courses.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container right">
+                  <div class="content">
+                    <h2>Q2 (June-August 2025)</h2>
+                    <ul>
+                      <li>Career Advancement: Seek feedback.</li>
+                      <li>
+                        Foreign Job: Prepare for interviews, continue applying.
+                      </li>
+                      <li>
+                        Leadership: Expand mentorship, read development books.
+                      </li>
+                      <li>Learning: Regularly update skills.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container left">
+                  <div class="content">
+                    <h2>Q3 (September-November 2025)</h2>
+                    <ul>
+                      <li>
+                        Career Advancement: Review progress, set new goals.
+                      </li>
+                      <li>
+                        Foreign Job: Finalize applications, attend interviews.
+                      </li>
+                      <li>Leadership: Continue mentoring.</li>
+                      <li>Learning: Maintain skill updates.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container right">
+                  <div class="content">
+                    <h2>Q4 (December-February 2025)</h2>
+                    <ul>
+                      <li>Networking: Build professional relationships.</li>
+                      <li>Feedback Loop: Review and adjust goals.</li>
+                      <li>Well-being: Maintain work-life balance.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="container right">
-              <div class="content">
-                <h4>Expand Professional Network</h4>
-                <ul>
-                  <li>
-                  Attend Major Tech Conferences: Participate in at least two major tech conferences to stay updated with industry trends and network with professionals.
-                  </li>
-                  <li>
-                 Professional Organizations: Join and actively participate in tech organizations such as IEEE or ACM.
-                  </li>
-                  <li>
-                   Public Speaking: Start speaking at meetups or conferences to share knowledge and establish myself as an expert in my field.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div> -->
-          <div class="timeline">
-  <div class="container left">
-    <div class="content">
-      <h2>Q1 (March-May 2024)</h2>
-      <ul>
-        <li>Enhance Skills: Identify gaps, start an online course.</li>
-<li>Portfolio: Begin a significant project.</li>
-<li>Networking: Attend a local tech meetup.</li>
-<li>Community: Choose an open-source project.</li>
-<li>HNG Internship: Start the HNG internship to enhance skills, become industry-standard, expand network, gain foreign opportunities, and receive mentorship.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>Q2 (June-August 2024)</h2>
-      <ul>
-        <li>Networking: Join online groups.</li>
-        <li>Community: Contribute to open source.</li>
-        <li>HNG Internship: Continue participating actively and utilize mentorship.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>Q3 (September-November 2024)</h2>
-      <ul>
-        <li>Portfolio: Start a new project.</li>
-        <li>Networking: Connect on LinkedIn.</li>
-        <li>Community: Volunteer for a tech project.</li>
-        <li>HNG Internship: Leverage networking and mentorship for project ideas.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>Q4 (December-February 2024)</h2>
-      <ul>
-        <li>Portfolio: Update portfolio.</li>
-        <li>Community: Increase open-source contributions.</li>
-        <li>HNG Internship: Reflect on learnings and apply them in new projects.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>Q1 (March-May 2025)</h2>
-   <ul>
-    <li>Career Advancement: Performance review, lead projects.</li>
-    <li>Foreign Job: Research opportunities and start applications.</li>
-    <li>Leadership: Mentor a junior developer, lead team projects.</li>
-    <li>Learning: Stay updated with industry news, enroll in advanced courses.</li>
-   </ul>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>Q2 (June-August 2025)</h2>
-      <ul>
-        <li>Career Advancement: Seek feedback.</li>
-        <li>Foreign Job: Prepare for interviews, continue applying.</li>
-        <li>Leadership: Expand mentorship, read development books.</li>
-        <li>Learning: Regularly update skills.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>Q3 (September-November 2025)</h2>
-      <ul>
-        <li> Career Advancement: Review progress, set new goals.</li>
-        <li>Foreign Job: Finalize applications, attend interviews.</li>
-        <li>Leadership: Continue mentoring.</li>
-        <li>Learning: Maintain skill updates.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>Q4 (December-February 2025)</h2>
-      <ul>
-        <li>Networking: Build professional relationships.</li>
-        <li>Feedback Loop: Review and adjust goals.</li>
-        <li>Well-being: Maintain work-life balance.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
+          </div>
         </div>
-        </div>
-     </div>
+      </div>
     </div>
-</div>
-<script>
-  const timeElement = document.getElementById("time")
-  timeElement.innerHTML =  currentUTCTime()
-   const dayElement = document.getElementById("day")
-  dayElement.innerHTML =  currentDayOfWeek()
-  function currentUTCTime() {
-  const now = new Date();
-  const hours = now.getUTCHours().toString().padStart(2, '0');
-  const minutes = now.getUTCMinutes().toString().padStart(2, '0');
-  const seconds = now.getUTCSeconds().toString().padStart(2, '0');
-  const utcTimeStr = `${hours}:${minutes}:${seconds} UTC`;
-  return utcTimeStr;
-
-}
-function currentDayOfWeek() {
-  const now = new Date();
-  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const dayIndex = now.getUTCDay();
-  const dayName = weekdays[dayIndex];
-  return dayName;
-}
-</script>
-</body>
+    <script>
+      const timeElement = document.getElementById("time");
+      timeElement.innerHTML = currentUTCTime();
+      const dayElement = document.getElementById("day");
+      dayElement.innerHTML = currentDayOfWeek();
+      function currentUTCTime() {
+        const now = new Date();
+        const hours = now.getUTCHours().toString().padStart(2, "0");
+        const minutes = now.getUTCMinutes().toString().padStart(2, "0");
+        const seconds = now.getUTCSeconds().toString().padStart(2, "0");
+        const utcTimeStr = `${hours}:${minutes}:${seconds} UTC`;
+        return utcTimeStr;
+      }
+      function currentDayOfWeek() {
+        const now = new Date();
+        const weekdays = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        const dayIndex = now.getUTCDay();
+        const dayName = weekdays[dayIndex];
+        return dayName;
+      }
+    </script>
+  </body>
 </html>
