@@ -1,0 +1,277 @@
+ *{
+    font-family: "Nunito Sans", sans-serif;
+  }
+body {
+
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+  .main-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+  }
+.profile-picture{
+  height: 955;
+  width: 710;
+}
+a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+div{
+  inset: 0;
+}
+.navbar{
+  background-color: azure;
+  width: 100%;
+  height:fit-content;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  position: sticky;
+}
+
+.navbar > ul{
+  top: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px
+}
+
+ul > .nav-item:hover{
+text-decoration: underline;
+}
+.main-content{
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+.basic-info{
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.name{
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+}
+.title{
+  margin: 0;
+  font-weight: 300;
+}
+.time-date{
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 0;
+  background-color: #f1f1f1;
+}
+.details-content{
+  padding-left: 20px ;
+  padding-right: 20px;
+  display:flex;
+  flex-direction: column;
+  
+}
+aside{
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.details-heading{
+  font-size: 30px;
+  font-weight: 500;
+}
+.about-me-details{
+  width: 98%;
+  max-width: 95%;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.about-section{
+  height: 100vh;
+  min-height: 100vh;  
+}
+a > .about-section {
+  color: green;
+  text-decoration: dashed;
+}
+.portfolio-section{
+  height: 50vh;
+  min-height: 50vh;  
+}
+
+.skill-container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.goals-section{
+    height: 100vh;
+    min-height: 100vh; 
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.html {width: 80%; background-color: #616161;}
+.css {width: 70%; background-color: #616161;}
+.js {width: 90%; background-color: #616161;}
+.php {width: 40%; background-color: #616161;}
+
+.flip-container {
+  background-color: transparent;
+  width: 250px;
+  height: 150px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-container-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:hover .flip-container-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-container-front, .flip-container-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-container-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-container-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+.portfolio-grid{
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 40px;
+}
+.goal-header{
+  margin-left: 80px;
+}
+
+ @media screen and (max-width: 800px)  {
+  .profile-picture{
+display: none;
+}
+.basic-info{
+  background-image: url("salscodes\ 710\ x\ 955.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* filter: brightness(80%); */
+  height: 100vh;
+  width: 100dvw;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+
+}
+.time-date{
+  color: black;
+}
+.portfolio-section{
+   margin-bottom: 300px;
+}
+  }
+ @media screen and (max-width: 600px) {
+    .main-wrapper{
+    width: 100dvw;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+  }
+  .name{
+    color: black;
+    font-weight: 600;
+    font-size: 60px;
+    /* background-color: #616161; */
+    /* filter: brightness(10%); */
+  }
+  .time-date{
+  color: black;
+}
+  .title{
+    color: #f1f1f1;
+  }
+  .email{
+    color: #f1f1f1;
+  }
+
+  .profile-picture{
+display: none;
+}
+.basic-info{
+  background-image: url("salscodes\ 710\ x\ 955.svg");
+  /* filter: brightness(80%); */
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+
+}
+.portfolio-grid{
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-section{
+   margin-bottom: 400px;
+}
+.about-section{
+  height: 100vh;
+  min-height: 100vh;  
+ margin-bottom: 550px;
+}
+.goals-section{
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+}
+.goal-header{
+  margin-left: 2px;
+}
+ }
