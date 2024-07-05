@@ -1,7 +1,6 @@
 const signup = async(request, response, next) => {
-    response.json({
-        message: "Success"
-    })
+    const { body } = request.body
+    
 }
 
 const login = async(request, response, next) => {

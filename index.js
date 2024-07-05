@@ -1,3 +1,4 @@
+require("dotenv").config({path: `${process.cwd()}/.env`})
 const express = require("express");
 
 const app = express()
@@ -11,5 +12,5 @@ app.get("/", (req, res) => {
         message: "Hello world"
     })
 })
-
-app.listen(9090, ()=> console.log("Server running"))
+const PORT = process.env.APP_PORT || 9090;
+app.listen(PORT, ()=> console.log(`Server running on port: ${PORT}`))
