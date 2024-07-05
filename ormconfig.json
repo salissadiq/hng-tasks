@@ -1,0 +1,17 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postres",
+    "password": "admin",
+    "database": "hng-task-two",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/models*.ts"],
+    "migrations":["src/migrations/*.ts"],
+    "cli":{
+        "entitiesDir": "src/models",
+        "migrationDir": "src/migrations"
+    }
+
+}
