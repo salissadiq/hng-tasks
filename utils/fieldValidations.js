@@ -6,7 +6,16 @@ const validateUser = (user) => {
         lastName: Joi.string().min(2).max(50).required(),
         email: Joi.string().min(2).max(50).email().required(),
         password: Joi.string().min(6).max(250).required(),
-        phone: Joi.string().min(10).max(12).required()
+        phone: Joi.string().min(10).max(12)
+    })
+
+    return schema.validate(user);
+}
+
+const validateLoginUser = (user) => {
+    const schema = Joi.object({
+        email: Joi.string().min(2).max(50).email().required(),
+        password: Joi.string().min(6).max(250).required(),
     })
 
     return schema.validate(user);
@@ -24,4 +33,4 @@ const fieldValidationHandler = (errorMessage) =>{
     };
 }
 
-module.exports = {validateUser, fieldValidationHandler}
+module.exports = {validateUser, fieldValidationHandler, validateLoginUser}

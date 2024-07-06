@@ -1,52 +1,33 @@
-'use strict';
-const {
-  Sequelize
-} = require('sequelize');
+// models/User.js
+const { Sequelize, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const { v4: uuidv4 } = require('uuid');
 
-const sequelize = require("../../config/database");
+module.exports = (sequelize) => {
+  const User = sequelize.define('User', {
+    userId: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+    },
+    firstName: {
+      type: DataTypes.STRING
+    },
+    lastName: {
+      type: DataTypes.STRING
+    },
+    email: {
+      type: DataTypes.STRING,
+      unique: true
+    },
+    password: {
+      type: DataTypes.STRING
+    }
+  });
+    User.beforeCreate(async (user) => {
+        user.userId = uuidv4();
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
+    });
 
-module.exports = sequelize.define('user', {
-      userId: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        unique: true,
-        type: Sequelize.INTEGER
-      },
-      firstName: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      lastName: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      email: {
-        unique: true,
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-          isEmail: {
-            msg: "Must a valid email"
-          }
-        }
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      phone: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-}, {
-      freezeTableName: true,
-      modelName: 'user'
-    })
+  return User;
+};

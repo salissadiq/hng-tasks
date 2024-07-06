@@ -8,7 +8,7 @@ module.exports = function (app) {
     app.use(express.json())
     app.use("/api/v1/auth", auth);
     app.use("/api/v1/organization", organization);
-    app.use("/api/v1/user", user);
+    app.use("/api/v1/users", user);
 
     app.use("*", (request, response, next) => {
         response.status(404).json({

@@ -1,3 +1,5 @@
+const { sequelize, User, Organisation, UserOrganisation } = require("../db/models")
+
 const createOrganization = async (request, response, next) => {
     response.json({
         message: "Create orga"
