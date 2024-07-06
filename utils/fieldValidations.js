@@ -5,8 +5,23 @@ const validateUser = (user) => {
         firstName: Joi.string().min(2).max(50).required(),
         lastName: Joi.string().min(2).max(50).required(),
         email: Joi.string().min(2).max(50).email().required(),
-        password: Joi.string().min(6).max(250).required()
+        password: Joi.string().min(6).max(250).required(),
+        phone: Joi.string().min(10).max(12).required()
     })
 
     return schema.validate(user);
 }
+
+
+const fieldValidationHandler = (errorMessage) =>{
+    const cleanedMessage = errorMessage.message.replace(/["\\]/g, '');
+    
+    return {
+        errors: errorMessage.path.map(field => ({
+            field: field,
+            message: cleanedMessage
+        }))
+    };
+}
+
+module.exports = {validateUser, fieldValidationHandler}

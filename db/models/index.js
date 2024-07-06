@@ -27,6 +27,7 @@ fs
     );
   })
   .forEach(file => {
+    console.log('FILE COURSE', file);
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   });
@@ -36,6 +37,9 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
+
+db.User.belongsToMany(db.organization, { through: 'userOrganization' });
+db.Organization.belongsToMany(db.oser, { through: 'userOrganization' });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

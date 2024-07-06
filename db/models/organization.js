@@ -5,38 +5,20 @@ const {
 
 const sequelize = require("../../config/database");
 
-module.exports = sequelize.define('user', {
-      userId: {
+module.exports = sequelize.define('organization', {
+      orgId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         unique: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      lastName: {
+      description: {
         type: Sequelize.STRING,
-        allowNull: false
-      },
-      email: {
-        unique: true,
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-          isEmail: {
-            msg: "Must a valid email"
-          }
-        }
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      phone: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -48,5 +30,5 @@ module.exports = sequelize.define('user', {
       }
 }, {
       freezeTableName: true,
-      modelName: 'user'
+      modelName: 'organization'
     })
