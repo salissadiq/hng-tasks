@@ -16,7 +16,9 @@ const register = catchAsync(
         const { firstName, lastName, email, password } = request.body;
        
         
-        const user = await User.create({ firstName, lastName, email, password }, {transaction});
+        const user = await User.create({ firstName, lastName, email, password }, { transaction });
+        
+        // Make sure the organisation name contains only 's
         const organisationName = `${firstName}'s Organisation`;
 
         const organisation = await Organisation.create({ name: organisationName }, {transaction});

@@ -21,6 +21,15 @@ const validateLoginUser = (user) => {
     return schema.validate(user);
 }
 
+const validateOrganisation = (org) => {
+    const schema = Joi.object({
+        name: Joi.string().min(2).max(50).required(),
+        description: Joi.string().min(6).max(250),
+    })
+
+    return schema.validate(org);
+}
+
 
 const fieldValidationHandler = (errorMessage) =>{
     const cleanedMessage = errorMessage.message.replace(/["\\]/g, '');
@@ -33,4 +42,4 @@ const fieldValidationHandler = (errorMessage) =>{
     };
 }
 
-module.exports = {validateUser, fieldValidationHandler, validateLoginUser}
+module.exports = {validateUser, fieldValidationHandler, validateLoginUser, validateOrganisation}

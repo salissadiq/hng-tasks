@@ -1,9 +1,10 @@
-const { createOrganization, getOrganization, getAllOrganization } = require('../controllers/organization.controller');
-
+const { createOrganization, getOrganization, getAllOrganization,addUserToOrganisation } = require('../controllers/organization.controller');
+const {protectedRoute} = require("../middleware/authentication")
 const router = require('express').Router();
 
-router.route('/').post(createOrganization)
-router.route('/').get(getAllOrganization)
-router.route('/:id').get(getOrganization)
+router.route('/').post(protectedRoute, createOrganization)
+router.route('/').get(protectedRoute, getAllOrganization)
+router.route('/:orgId').get(protectedRoute, getOrganization)
+router.route('/:orgId/users').post(protectedRoute, addUserToOrganisation)
 
 module.exports = router;
