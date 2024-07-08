@@ -6,9 +6,9 @@ const user = require("../routes/user.routes");
 
 module.exports = function (app) {
     app.use(express.json())
-    app.use("/api/v1/auth", auth);
-    app.use("/api/v1/organisations", organization);
-    app.use("/api/v1/users", user);
+    app.use("/api/auth", auth);
+    app.use("/api/organisations", organization);
+    app.use("/api/users", user);
 
     app.use("*", (request, response, next) => {
         response.status(404).json({

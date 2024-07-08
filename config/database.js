@@ -7,6 +7,6 @@ const env = process.env.NODE_ENV || "development";
 const config = require("./config")[env]
 
 const sequelize = new Sequelize(config)
-// const sequelize = new Sequelize(`postgresql://salscodes:neNMgBEAB9vlHIOjH2voHs8xSRYGjUaW@dpg-cq5efutds78s73d0q9dg-a.oregon-postgres.render.com/userorgs`)
+// const sequelize = new Sequelize(`postgresql://postgres.lvvkmgwcflcdvcpauiaq:[YOUR-PASSWORD]@aws-0-eu-west-2.pooler.supabase.com:5432/postgres`)
 
 module.exports = sequelize
