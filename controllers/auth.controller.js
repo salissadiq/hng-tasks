@@ -1,5 +1,5 @@
 require("dotenv").config({path: `${process.cwd()}/.env`})
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
 
 const { validateUser, fieldValidationHandler, validateLoginUser } = require("../utils/fieldValidations")
