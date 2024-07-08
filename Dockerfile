@@ -32,6 +32,7 @@ ENV DB_PORT=${DB_PORT}
 
 # Expose port 3000 for the app
 EXPOSE ${PORT}
+EXPOSE ${DB_PORT}}
 
 # Start the app
 CMD ["npm", "start"]
