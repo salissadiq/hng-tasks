@@ -5,16 +5,12 @@ const sequelize = require("./config/database");
 
 
 const app = express()
-
-require("./startup/routes")(app);
-
-
-
 app.get("/", (req, res) => {
     res.send({
-        message: "Hello world"
+        message: "Server is live"
     })
 })
+require("./startup/routes")(app);
 app.use(errorHandler)
 const PORT = process.env.APP_PORT || 9090;
 
