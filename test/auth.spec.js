@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../index');
-const { sequelize, User, Organization } = require('../db/models');
+const { sequelize, User, Organization, UserOrganisation } = require('../db/models');
 describe('Auth Endpoints', () => {
   // beforeAll(async () => {
   //   await sequelize.sync({ alter: true });
@@ -8,10 +8,10 @@ describe('Auth Endpoints', () => {
   // afterAll(async () => {
   //   await sequelize.close();
   // });
-  describe('POST /api/auth/register', () => {
+  describe('POST /auth/register', () => {
     it('should register a new user with a default organisation', async () => {
       const res = await request(app)
-        .post('/api/auth/register')
+        .post('/auth/register')
         .send({
           firstName: 'John',
           lastName: 'Doe',
@@ -22,11 +22,17 @@ describe('Auth Endpoints', () => {
       expect(res.statusCode).toEqual(201);
       expect(res.body).toHaveProperty('user');
       expect(res.body).toHaveProperty('token');
-      // const user = await User.findOne({
-      //   where: { email: 'john@example.com' }});
-      // expect(user.Organizations).toBeDefined();
-      // expect(user.Organizations.length).toEqual(1);
-      // expect(user.Organizations[0].name).toEqual("John's Organization");
+      const user = await User.findOne({
+        where: { email: 'john@example.com' }
+      });
+      const organisation = await Organization.findOne({
+        where: { name: "John's Organisation" }
+      });
+       const userOrganisation = await UserOrganisation.findOne({
+        where: { userId: user.userId }});
+      expect(user.firstName).toEqual("John");
+      expect(organisation.name).toEqual("John's Organization");
+      expect(userOrganisation.userId).toEqual(user.userId);
     });
     // it('should return 422 if email already exists', async () => {
     //   await request(app)

@@ -30,9 +30,10 @@ exports.protectedRoute = catchAsync(async (request, reponse, next) => {
     let user = await User.findByPk(userId)
 
     if (!user)
-      return next(
-        new UnAuthenticated('The user with this token no longer exists')
-      )
+      return reponse.status(401).json({
+      status: 'failed',
+      message: 'You are not logged in, please log in to get access',
+    })
 
     request.user = user
     next()
