@@ -6,7 +6,7 @@ const user = require("../routes/user.routes");
 
 module.exports = function (app) {
     app.use(express.json())
-    app.use("/api/auth", auth);
+    app.use("/auth", auth);
     app.use("/api/organisations", organization);
     app.use("/api/users", user);
 

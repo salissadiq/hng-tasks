@@ -14,4 +14,6 @@ require("./startup/routes")(app);
 app.use(errorHandler)
 const PORT = process.env.APP_PORT || 9090;
 
-app.listen(PORT, ()=> console.log(`Server running on port: ${PORT}`))
+app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+
+module.exports = app;
